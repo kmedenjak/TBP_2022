@@ -26,7 +26,7 @@ namespace Obracun
                 korisnik.Prijava(txt_PrijavaId.Text);
                 txt_PrijavaId.Clear();
             }
-            else if (korisnik.Prijavljen)
+            else if (korisnik != null && korisnik.Prijavljen)
             {
                 korisnik.Odjava(txt_PrijavaId.Text);
                 MessageBox.Show("Uspjesna odjava");

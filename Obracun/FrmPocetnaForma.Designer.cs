@@ -32,9 +32,9 @@
             this.lbl_popisZaposlenika = new System.Windows.Forms.Label();
             this.btn_UnosZaposlenika = new System.Windows.Forms.Button();
             this.btn_ObrsiZaposlenika = new System.Windows.Forms.Button();
-            this.txt_Pretrazi = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Menu = new System.Windows.Forms.Button();
+            this.btnPrikazPlatneListe = new System.Windows.Forms.Button();
+            this.btn_GenerirajPlatnuListu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_popisZaposlenika)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,22 +74,7 @@
             this.btn_ObrsiZaposlenika.TabIndex = 3;
             this.btn_ObrsiZaposlenika.Text = "Obrisi zaposelnika";
             this.btn_ObrsiZaposlenika.UseVisualStyleBackColor = true;
-            // 
-            // txt_Pretrazi
-            // 
-            this.txt_Pretrazi.Location = new System.Drawing.Point(723, 51);
-            this.txt_Pretrazi.Name = "txt_Pretrazi";
-            this.txt_Pretrazi.Size = new System.Drawing.Size(186, 20);
-            this.txt_Pretrazi.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(723, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Pretrazi:";
+            this.btn_ObrsiZaposlenika.Click += new System.EventHandler(this.btn_ObrsiZaposlenika_Click);
             // 
             // btn_Menu
             // 
@@ -101,14 +86,34 @@
             this.btn_Menu.UseVisualStyleBackColor = true;
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
+            // btnPrikazPlatneListe
+            // 
+            this.btnPrikazPlatneListe.Location = new System.Drawing.Point(790, 48);
+            this.btnPrikazPlatneListe.Name = "btnPrikazPlatneListe";
+            this.btnPrikazPlatneListe.Size = new System.Drawing.Size(119, 23);
+            this.btnPrikazPlatneListe.TabIndex = 8;
+            this.btnPrikazPlatneListe.Text = "Platna lista";
+            this.btnPrikazPlatneListe.UseVisualStyleBackColor = true;
+            this.btnPrikazPlatneListe.Click += new System.EventHandler(this.btnPrikazPlatneListe_Click);
+            // 
+            // btn_GenerirajPlatnuListu
+            // 
+            this.btn_GenerirajPlatnuListu.Location = new System.Drawing.Point(790, 18);
+            this.btn_GenerirajPlatnuListu.Name = "btn_GenerirajPlatnuListu";
+            this.btn_GenerirajPlatnuListu.Size = new System.Drawing.Size(119, 23);
+            this.btn_GenerirajPlatnuListu.TabIndex = 9;
+            this.btn_GenerirajPlatnuListu.Text = "Generiraj platnu listu";
+            this.btn_GenerirajPlatnuListu.UseVisualStyleBackColor = true;
+            this.btn_GenerirajPlatnuListu.Click += new System.EventHandler(this.btn_GenerirajPlatnuListu_Click);
+            // 
             // FrmPocetnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 530);
+            this.Controls.Add(this.btn_GenerirajPlatnuListu);
+            this.Controls.Add(this.btnPrikazPlatneListe);
             this.Controls.Add(this.btn_Menu);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_Pretrazi);
             this.Controls.Add(this.btn_ObrsiZaposlenika);
             this.Controls.Add(this.btn_UnosZaposlenika);
             this.Controls.Add(this.lbl_popisZaposlenika);
@@ -127,9 +132,9 @@
         private System.Windows.Forms.Label lbl_popisZaposlenika;
         private System.Windows.Forms.Button btn_UnosZaposlenika;
         private System.Windows.Forms.Button btn_ObrsiZaposlenika;
-        private System.Windows.Forms.TextBox txt_Pretrazi;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Menu;
+        private System.Windows.Forms.Button btnPrikazPlatneListe;
+        private System.Windows.Forms.Button btn_GenerirajPlatnuListu;
     }
 }
 

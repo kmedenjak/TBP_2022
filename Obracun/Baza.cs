@@ -55,7 +55,14 @@ namespace Obracun
                 sql.Connection = Connection;
                 sql.CommandType = CommandType.Text;
                 sql.CommandText = upit;
-                sql.ExecuteNonQuery();
+                try
+                {
+                    sql.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
                 sql.Dispose();
                 Connection.Close();
             }
@@ -63,7 +70,7 @@ namespace Obracun
 
         public string UpisSVracanjem(string upit)
         {
-            string rez;
+            //string rez = "";
             if (Connection == null)
             {
                 throw new ArgumentNullException();
@@ -75,7 +82,7 @@ namespace Obracun
                 sql.Connection = Connection;
                 sql.CommandType = CommandType.Text;
                 sql.CommandText = upit;
-                rez = sql.ExecuteScalar().ToString();
+                string rez = sql.ExecuteScalar().ToString();
                 sql.Dispose();
                 Connection.Close();
                 return rez;

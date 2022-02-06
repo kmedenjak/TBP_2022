@@ -17,19 +17,44 @@ namespace Obracun
         public FrmPocetnaForma()
         {
             InitializeComponent();
-            dgv_popisZaposlenika.DataSource = Korisnik.korisnici;
+            PopisZaposlenika();
         }
 
         private void btn_UnosZaposlenika_Click(object sender, EventArgs e)
         {
             Form UnosKorisnika = new FrmUnosKorisnika();
-            UnosKorisnika.Show();
+            UnosKorisnika.ShowDialog();
+            PopisZaposlenika();
         }
 
         private void btn_Menu_Click(object sender, EventArgs e)
         {
             Form Meni = new FrmMenu();
             Meni.Show();
+        }
+
+        private void btn_ObrsiZaposlenika_Click(object sender, EventArgs e)
+        {
+            Korisnik.ObrisiKorisnika(dgv_popisZaposlenika.CurrentRow.Cells["OIB"].Value.ToString());
+            PopisZaposlenika();
+        }
+
+        private void PopisZaposlenika()
+        {
+            Korisnik.OsvjeziListu();
+            dgv_popisZaposlenika.DataSource = Korisnik.korisnici;
+        }
+
+        private void btnPrikazPlatneListe_Click(object sender, EventArgs e)
+        {
+            Form PlatneListe = new frmPopisPlatnihListi();
+            PlatneListe.ShowDialog();
+        }
+
+        private void btn_GenerirajPlatnuListu_Click(object sender, EventArgs e)
+        {
+            PlatnaLista.GenerirajPlatnuListu(dgv_popisZaposlenika.CurrentRow.Cells["OIB"].Value.ToString());
+            MessageBox.Show("Generirana je platna lista!");
         }
     }
 }

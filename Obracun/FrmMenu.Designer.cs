@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_NazivRadnogMjesta = new System.Windows.Forms.Label();
-            this.lbl_Satnica = new System.Windows.Forms.Label();
-            this.cmb_Odjel = new System.Windows.Forms.ComboBox();
-            this.lbl_Odjel = new System.Windows.Forms.Label();
-            this.txt_NazivRadnoMjesto = new System.Windows.Forms.TextBox();
-            this.txt_Satnica = new System.Windows.Forms.TextBox();
-            this.btn_UnesiRadnoMjesto = new System.Windows.Forms.Button();
-            this.dgv_PopisRadnoMjesto = new System.Windows.Forms.DataGridView();
+            this.btn_ObrisiRadnoMjesto = new System.Windows.Forms.Button();
             this.lbl_PopisRadniMjesta = new System.Windows.Forms.Label();
+            this.dgv_PopisRadnoMjesto = new System.Windows.Forms.DataGridView();
+            this.btn_UnesiRadnoMjesto = new System.Windows.Forms.Button();
+            this.txt_Satnica = new System.Windows.Forms.TextBox();
+            this.txt_NazivRadnoMjesto = new System.Windows.Forms.TextBox();
+            this.lbl_Odjel = new System.Windows.Forms.Label();
+            this.cmb_Odjel = new System.Windows.Forms.ComboBox();
+            this.lbl_Satnica = new System.Windows.Forms.Label();
+            this.lbl_NazivRadnogMjesta = new System.Windows.Forms.Label();
             this.gb_DodajNoviOdjel = new System.Windows.Forms.GroupBox();
+            this.btn_ObrisiOdjel = new System.Windows.Forms.Button();
+            this.cmb_VoditeljOdjela = new System.Windows.Forms.ComboBox();
             this.lbl_PopisOdjela = new System.Windows.Forms.Label();
             this.dgv_PopisOdjel = new System.Windows.Forms.DataGridView();
             this.btn_UnesiOdjel = new System.Windows.Forms.Button();
             this.txt_NazivOdjel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_NazivOdjel = new System.Windows.Forms.Label();
-            this.cmb_VoditeljOdjela = new System.Windows.Forms.ComboBox();
             this.btn_Zatvori = new System.Windows.Forms.Button();
-            this.btn_ObrisiRadnoMjesto = new System.Windows.Forms.Button();
-            this.btn_ObrisiOdjel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PopisRadnoMjesto)).BeginInit();
             this.gb_DodajNoviOdjel.SuspendLayout();
@@ -74,31 +74,56 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodaj novo radno mjesto";
             // 
-            // lbl_NazivRadnogMjesta
+            // btn_ObrisiRadnoMjesto
             // 
-            this.lbl_NazivRadnogMjesta.AutoSize = true;
-            this.lbl_NazivRadnogMjesta.Location = new System.Drawing.Point(15, 34);
-            this.lbl_NazivRadnogMjesta.Name = "lbl_NazivRadnogMjesta";
-            this.lbl_NazivRadnogMjesta.Size = new System.Drawing.Size(37, 13);
-            this.lbl_NazivRadnogMjesta.TabIndex = 1;
-            this.lbl_NazivRadnogMjesta.Text = "Naziv:";
+            this.btn_ObrisiRadnoMjesto.Location = new System.Drawing.Point(309, 228);
+            this.btn_ObrisiRadnoMjesto.Name = "btn_ObrisiRadnoMjesto";
+            this.btn_ObrisiRadnoMjesto.Size = new System.Drawing.Size(75, 23);
+            this.btn_ObrisiRadnoMjesto.TabIndex = 8;
+            this.btn_ObrisiRadnoMjesto.Text = "Obrisi";
+            this.btn_ObrisiRadnoMjesto.UseVisualStyleBackColor = true;
+            this.btn_ObrisiRadnoMjesto.Click += new System.EventHandler(this.btn_ObrisiRadnoMjesto_Click);
             // 
-            // lbl_Satnica
+            // lbl_PopisRadniMjesta
             // 
-            this.lbl_Satnica.AutoSize = true;
-            this.lbl_Satnica.Location = new System.Drawing.Point(15, 85);
-            this.lbl_Satnica.Name = "lbl_Satnica";
-            this.lbl_Satnica.Size = new System.Drawing.Size(46, 13);
-            this.lbl_Satnica.TabIndex = 2;
-            this.lbl_Satnica.Text = "Satnica:";
+            this.lbl_PopisRadniMjesta.AutoSize = true;
+            this.lbl_PopisRadniMjesta.Location = new System.Drawing.Point(18, 238);
+            this.lbl_PopisRadniMjesta.Name = "lbl_PopisRadniMjesta";
+            this.lbl_PopisRadniMjesta.Size = new System.Drawing.Size(101, 13);
+            this.lbl_PopisRadniMjesta.TabIndex = 7;
+            this.lbl_PopisRadniMjesta.Text = "Popis radnih mjesta:";
             // 
-            // cmb_Odjel
+            // dgv_PopisRadnoMjesto
             // 
-            this.cmb_Odjel.FormattingEnabled = true;
-            this.cmb_Odjel.Location = new System.Drawing.Point(18, 158);
-            this.cmb_Odjel.Name = "cmb_Odjel";
-            this.cmb_Odjel.Size = new System.Drawing.Size(225, 21);
-            this.cmb_Odjel.TabIndex = 3;
+            this.dgv_PopisRadnoMjesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_PopisRadnoMjesto.Location = new System.Drawing.Point(18, 263);
+            this.dgv_PopisRadnoMjesto.Name = "dgv_PopisRadnoMjesto";
+            this.dgv_PopisRadnoMjesto.Size = new System.Drawing.Size(366, 150);
+            this.dgv_PopisRadnoMjesto.TabIndex = 1;
+            // 
+            // btn_UnesiRadnoMjesto
+            // 
+            this.btn_UnesiRadnoMjesto.Location = new System.Drawing.Point(168, 199);
+            this.btn_UnesiRadnoMjesto.Name = "btn_UnesiRadnoMjesto";
+            this.btn_UnesiRadnoMjesto.Size = new System.Drawing.Size(75, 23);
+            this.btn_UnesiRadnoMjesto.TabIndex = 1;
+            this.btn_UnesiRadnoMjesto.Text = "Unesi";
+            this.btn_UnesiRadnoMjesto.UseVisualStyleBackColor = true;
+            this.btn_UnesiRadnoMjesto.Click += new System.EventHandler(this.btn_UnesiRadnoMjesto_Click);
+            // 
+            // txt_Satnica
+            // 
+            this.txt_Satnica.Location = new System.Drawing.Point(18, 107);
+            this.txt_Satnica.Name = "txt_Satnica";
+            this.txt_Satnica.Size = new System.Drawing.Size(225, 20);
+            this.txt_Satnica.TabIndex = 6;
+            // 
+            // txt_NazivRadnoMjesto
+            // 
+            this.txt_NazivRadnoMjesto.Location = new System.Drawing.Point(18, 56);
+            this.txt_NazivRadnoMjesto.Name = "txt_NazivRadnoMjesto";
+            this.txt_NazivRadnoMjesto.Size = new System.Drawing.Size(225, 20);
+            this.txt_NazivRadnoMjesto.TabIndex = 5;
             // 
             // lbl_Odjel
             // 
@@ -109,45 +134,31 @@
             this.lbl_Odjel.TabIndex = 4;
             this.lbl_Odjel.Text = "Odjel:";
             // 
-            // txt_NazivRadnoMjesto
+            // cmb_Odjel
             // 
-            this.txt_NazivRadnoMjesto.Location = new System.Drawing.Point(18, 56);
-            this.txt_NazivRadnoMjesto.Name = "txt_NazivRadnoMjesto";
-            this.txt_NazivRadnoMjesto.Size = new System.Drawing.Size(225, 20);
-            this.txt_NazivRadnoMjesto.TabIndex = 5;
+            this.cmb_Odjel.FormattingEnabled = true;
+            this.cmb_Odjel.Location = new System.Drawing.Point(18, 158);
+            this.cmb_Odjel.Name = "cmb_Odjel";
+            this.cmb_Odjel.Size = new System.Drawing.Size(225, 21);
+            this.cmb_Odjel.TabIndex = 3;
             // 
-            // txt_Satnica
+            // lbl_Satnica
             // 
-            this.txt_Satnica.Location = new System.Drawing.Point(18, 107);
-            this.txt_Satnica.Name = "txt_Satnica";
-            this.txt_Satnica.Size = new System.Drawing.Size(225, 20);
-            this.txt_Satnica.TabIndex = 6;
+            this.lbl_Satnica.AutoSize = true;
+            this.lbl_Satnica.Location = new System.Drawing.Point(15, 85);
+            this.lbl_Satnica.Name = "lbl_Satnica";
+            this.lbl_Satnica.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Satnica.TabIndex = 2;
+            this.lbl_Satnica.Text = "Satnica:";
             // 
-            // btn_UnesiRadnoMjesto
+            // lbl_NazivRadnogMjesta
             // 
-            this.btn_UnesiRadnoMjesto.Location = new System.Drawing.Point(168, 199);
-            this.btn_UnesiRadnoMjesto.Name = "btn_UnesiRadnoMjesto";
-            this.btn_UnesiRadnoMjesto.Size = new System.Drawing.Size(75, 23);
-            this.btn_UnesiRadnoMjesto.TabIndex = 1;
-            this.btn_UnesiRadnoMjesto.Text = "Unesi";
-            this.btn_UnesiRadnoMjesto.UseVisualStyleBackColor = true;
-            // 
-            // dgv_PopisRadnoMjesto
-            // 
-            this.dgv_PopisRadnoMjesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_PopisRadnoMjesto.Location = new System.Drawing.Point(18, 263);
-            this.dgv_PopisRadnoMjesto.Name = "dgv_PopisRadnoMjesto";
-            this.dgv_PopisRadnoMjesto.Size = new System.Drawing.Size(366, 150);
-            this.dgv_PopisRadnoMjesto.TabIndex = 1;
-            // 
-            // lbl_PopisRadniMjesta
-            // 
-            this.lbl_PopisRadniMjesta.AutoSize = true;
-            this.lbl_PopisRadniMjesta.Location = new System.Drawing.Point(18, 238);
-            this.lbl_PopisRadniMjesta.Name = "lbl_PopisRadniMjesta";
-            this.lbl_PopisRadniMjesta.Size = new System.Drawing.Size(101, 13);
-            this.lbl_PopisRadniMjesta.TabIndex = 7;
-            this.lbl_PopisRadniMjesta.Text = "Popis radnih mjesta:";
+            this.lbl_NazivRadnogMjesta.AutoSize = true;
+            this.lbl_NazivRadnogMjesta.Location = new System.Drawing.Point(15, 34);
+            this.lbl_NazivRadnogMjesta.Name = "lbl_NazivRadnogMjesta";
+            this.lbl_NazivRadnogMjesta.Size = new System.Drawing.Size(37, 13);
+            this.lbl_NazivRadnogMjesta.TabIndex = 1;
+            this.lbl_NazivRadnogMjesta.Text = "Naziv:";
             // 
             // gb_DodajNoviOdjel
             // 
@@ -165,6 +176,24 @@
             this.gb_DodajNoviOdjel.TabIndex = 8;
             this.gb_DodajNoviOdjel.TabStop = false;
             this.gb_DodajNoviOdjel.Text = "Dodaj novi odjel";
+            // 
+            // btn_ObrisiOdjel
+            // 
+            this.btn_ObrisiOdjel.Location = new System.Drawing.Point(309, 233);
+            this.btn_ObrisiOdjel.Name = "btn_ObrisiOdjel";
+            this.btn_ObrisiOdjel.Size = new System.Drawing.Size(75, 23);
+            this.btn_ObrisiOdjel.TabIndex = 9;
+            this.btn_ObrisiOdjel.Text = "Obrisi";
+            this.btn_ObrisiOdjel.UseVisualStyleBackColor = true;
+            this.btn_ObrisiOdjel.Click += new System.EventHandler(this.btn_ObrisiOdjel_Click);
+            // 
+            // cmb_VoditeljOdjela
+            // 
+            this.cmb_VoditeljOdjela.FormattingEnabled = true;
+            this.cmb_VoditeljOdjela.Location = new System.Drawing.Point(18, 106);
+            this.cmb_VoditeljOdjela.Name = "cmb_VoditeljOdjela";
+            this.cmb_VoditeljOdjela.Size = new System.Drawing.Size(225, 21);
+            this.cmb_VoditeljOdjela.TabIndex = 8;
             // 
             // lbl_PopisOdjela
             // 
@@ -191,6 +220,7 @@
             this.btn_UnesiOdjel.TabIndex = 1;
             this.btn_UnesiOdjel.Text = "Unesi";
             this.btn_UnesiOdjel.UseVisualStyleBackColor = true;
+            this.btn_UnesiOdjel.Click += new System.EventHandler(this.btn_UnesiOdjel_Click);
             // 
             // txt_NazivOdjel
             // 
@@ -217,14 +247,6 @@
             this.btn_NazivOdjel.TabIndex = 1;
             this.btn_NazivOdjel.Text = "Naziv:";
             // 
-            // cmb_VoditeljOdjela
-            // 
-            this.cmb_VoditeljOdjela.FormattingEnabled = true;
-            this.cmb_VoditeljOdjela.Location = new System.Drawing.Point(18, 106);
-            this.cmb_VoditeljOdjela.Name = "cmb_VoditeljOdjela";
-            this.cmb_VoditeljOdjela.Size = new System.Drawing.Size(225, 21);
-            this.cmb_VoditeljOdjela.TabIndex = 8;
-            // 
             // btn_Zatvori
             // 
             this.btn_Zatvori.Location = new System.Drawing.Point(699, 466);
@@ -234,24 +256,6 @@
             this.btn_Zatvori.Text = "Zatvori";
             this.btn_Zatvori.UseVisualStyleBackColor = true;
             this.btn_Zatvori.Click += new System.EventHandler(this.btn_Zatvori_Click);
-            // 
-            // btn_ObrisiRadnoMjesto
-            // 
-            this.btn_ObrisiRadnoMjesto.Location = new System.Drawing.Point(309, 228);
-            this.btn_ObrisiRadnoMjesto.Name = "btn_ObrisiRadnoMjesto";
-            this.btn_ObrisiRadnoMjesto.Size = new System.Drawing.Size(75, 23);
-            this.btn_ObrisiRadnoMjesto.TabIndex = 8;
-            this.btn_ObrisiRadnoMjesto.Text = "Obrisi";
-            this.btn_ObrisiRadnoMjesto.UseVisualStyleBackColor = true;
-            // 
-            // btn_ObrisiOdjel
-            // 
-            this.btn_ObrisiOdjel.Location = new System.Drawing.Point(309, 233);
-            this.btn_ObrisiOdjel.Name = "btn_ObrisiOdjel";
-            this.btn_ObrisiOdjel.Size = new System.Drawing.Size(75, 23);
-            this.btn_ObrisiOdjel.TabIndex = 9;
-            this.btn_ObrisiOdjel.Text = "Obrisi";
-            this.btn_ObrisiOdjel.UseVisualStyleBackColor = true;
             // 
             // FrmMenu
             // 

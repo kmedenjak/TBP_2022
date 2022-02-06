@@ -34,7 +34,6 @@
             this.lbl_Telefon = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_Id = new System.Windows.Forms.Label();
-            this.lbl_NovaLozinka = new System.Windows.Forms.Label();
             this.dgv_RadnoMjesto = new System.Windows.Forms.DataGridView();
             this.lbl_RadnoMjesto = new System.Windows.Forms.Label();
             this.txt_Oib = new System.Windows.Forms.TextBox();
@@ -43,7 +42,6 @@
             this.txt_Telefon = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_ID = new System.Windows.Forms.TextBox();
-            this.txt_Lozinka = new System.Windows.Forms.TextBox();
             this.lbl_UnosNovogKorisnika = new System.Windows.Forms.Label();
             this.btn_Unesi = new System.Windows.Forms.Button();
             this.btn_Odustani = new System.Windows.Forms.Button();
@@ -104,15 +102,6 @@
             this.lbl_Id.TabIndex = 5;
             this.lbl_Id.Text = "ID:";
             // 
-            // lbl_NovaLozinka
-            // 
-            this.lbl_NovaLozinka.AutoSize = true;
-            this.lbl_NovaLozinka.Location = new System.Drawing.Point(59, 296);
-            this.lbl_NovaLozinka.Name = "lbl_NovaLozinka";
-            this.lbl_NovaLozinka.Size = new System.Drawing.Size(47, 13);
-            this.lbl_NovaLozinka.TabIndex = 6;
-            this.lbl_NovaLozinka.Text = "Lozinka:";
-            // 
             // dgv_RadnoMjesto
             // 
             this.dgv_RadnoMjesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -172,13 +161,6 @@
             this.txt_ID.Size = new System.Drawing.Size(235, 20);
             this.txt_ID.TabIndex = 14;
             // 
-            // txt_Lozinka
-            // 
-            this.txt_Lozinka.Location = new System.Drawing.Point(110, 293);
-            this.txt_Lozinka.Name = "txt_Lozinka";
-            this.txt_Lozinka.Size = new System.Drawing.Size(235, 20);
-            this.txt_Lozinka.TabIndex = 15;
-            // 
             // lbl_UnosNovogKorisnika
             // 
             this.lbl_UnosNovogKorisnika.AutoSize = true;
@@ -218,7 +200,6 @@
             this.Controls.Add(this.btn_Odustani);
             this.Controls.Add(this.btn_Unesi);
             this.Controls.Add(this.lbl_UnosNovogKorisnika);
-            this.Controls.Add(this.txt_Lozinka);
             this.Controls.Add(this.txt_ID);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.txt_Telefon);
@@ -227,7 +208,6 @@
             this.Controls.Add(this.txt_Oib);
             this.Controls.Add(this.lbl_RadnoMjesto);
             this.Controls.Add(this.dgv_RadnoMjesto);
-            this.Controls.Add(this.lbl_NovaLozinka);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.lbl_Email);
             this.Controls.Add(this.lbl_Telefon);
@@ -250,7 +230,6 @@
         private System.Windows.Forms.Label lbl_Telefon;
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_Id;
-        private System.Windows.Forms.Label lbl_NovaLozinka;
         private System.Windows.Forms.DataGridView dgv_RadnoMjesto;
         private System.Windows.Forms.Label lbl_RadnoMjesto;
         private System.Windows.Forms.TextBox txt_Oib;
@@ -259,7 +238,6 @@
         private System.Windows.Forms.TextBox txt_Telefon;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_ID;
-        private System.Windows.Forms.TextBox txt_Lozinka;
         private System.Windows.Forms.Label lbl_UnosNovogKorisnika;
         private System.Windows.Forms.Button btn_Unesi;
         private System.Windows.Forms.Button btn_Odustani;

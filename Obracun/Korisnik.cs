@@ -11,28 +11,27 @@ namespace Obracun
     internal class Korisnik
     {
         static Baza baza = new Baza(new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=TBP2021"));
-        public static List<Korisnik> korisnici = (from DataRow dr in baza.DohvatiRezultat("select * from korisnik").Rows
-                                                  select new Korisnik()
-                                                  {
-                                                      OIB = dr["oib"].ToString(),
-                                                      ID = dr["id_prijave"].ToString(),
-                                                      Ime = dr["ime"].ToString(),
-                                                      Prezime = dr["prezime"].ToString(),
-                                                      Prijavljen = Convert.ToBoolean(dr["prijavljen"]),
-                                                      Uloga = (int)dr["uloga_id"]
-                                                  }).ToList();
+        public static List<Korisnik> korisnici = DohvatiKorisnike();
         public string OIB { get; set; }
         public string ID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public bool Prijavljen { get; set; }
         public int Uloga { get; set; }
+
         Rad rad = new Rad();
 
         public void Prijava(string id)
         {
             rad.Zapocni(DateTime.Now);
-            rad.ID = Convert.ToInt32(baza.UpisSVracanjem($"insert into rad (radio_od, ned_blagdan) values('{rad.Pocetak}', false) returning rad_id;"));
+            if(DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+            {
+                rad.ID = int.Parse(baza.UpisSVracanjem($"insert into rad (radio_od, ned_blagdan) values('{rad.Pocetak}', true) returning rad_id;"));
+            }
+            else
+            {
+                rad.ID = int.Parse(baza.UpisSVracanjem($"insert into rad (radio_od, ned_blagdan) values('{rad.Pocetak}', false) returning rad_id;"));
+            }
             baza.Upis($"update korisnik set prijavljen = true where id_prijave = '{id}'");
             Prijavljen = true;
         }
@@ -47,6 +46,32 @@ namespace Obracun
             baza.Upis($"insert into dnevnica (rad_id, korisnik_id) values({rad.ID}, '{OIB}')");
             baza.IzracunSatnice();
             Prijavljen = false;
+        }
+
+        public static void ObrisiKorisnika(string oib)
+        {
+            string brisanjeKorisnika = $"DELETE FROM korisnik WHERE oib = '{oib}'";
+            baza.Upis(brisanjeKorisnika);
+        }
+
+        static List<Korisnik> DohvatiKorisnike()
+        {
+            List<Korisnik> korisnici = (from DataRow dr in baza.DohvatiRezultat("select * from korisnik").Rows
+                                                      select new Korisnik()
+                                                      {
+                                                          OIB = dr["oib"].ToString(),
+                                                          ID = dr["id_prijave"].ToString(),
+                                                          Ime = dr["ime"].ToString(),
+                                                          Prezime = dr["prezime"].ToString(),
+                                                          Prijavljen = Convert.ToBoolean(dr["prijavljen"]),
+                                                          Uloga = (int)dr["uloga_id"]
+                                                      }).ToList();
+            return korisnici;
+        }
+
+        public static void OsvjeziListu()
+        {
+            korisnici = DohvatiKorisnike();
         }
     }
 }

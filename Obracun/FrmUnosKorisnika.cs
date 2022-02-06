@@ -17,7 +17,7 @@ namespace Obracun
         public FrmUnosKorisnika()
         {
             InitializeComponent();
-            dgv_RadnoMjesto.DataSource = RadnoMjesto.radnaMjesta;
+            dgv_RadnoMjesto.DataSource = RadnoMjesto.DohvatiRadnaMjesta();
 
         }
 
@@ -28,9 +28,10 @@ namespace Obracun
 
         private void btn_Unesi_Click(object sender, EventArgs e)
         {
-            string idRadnogMjesta = dgv_RadnoMjesto.CurrentRow.Cells[0].Value.ToString();
-            baza.Upis("insert into korisnik(oib, ime, prezime, telefon, email, id_prijave, uloga_id, radno_mjesto_id, nadredeni_id)" +
-            "values('" + txt_Oib + "', '" + txt_Ime + "', '" + txt_Prezime + "', '" + txt_Telefon + "', '" + txt_Email + "', '" + txt_ID + "', 2, '"+int.Parse(idRadnogMjesta)+"', 1, )");
+            int idRadnogMjesta = int.Parse(dgv_RadnoMjesto.CurrentRow.Cells[0].Value.ToString());
+            baza.Upis($"INSERT INTO korisnik (oib, ime, prezime, telefon, email, id_prijave, uloga_id, radno_mjesto_id, nadredeni, prijavljen) VALUES ('{txt_Oib.Text}', '{txt_Ime.Text}', '{txt_Prezime.Text}', '{txt_Telefon.Text}', '{txt_Email.Text}', '{txt_ID.Text}', 3, {idRadnogMjesta}, null, false)");
+            MessageBox.Show("Uspjesno unesen korisnik!");
+            this.Close();
         }
     }
 }
