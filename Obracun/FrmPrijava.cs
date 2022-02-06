@@ -20,21 +20,28 @@ namespace Obracun
         private void btn_Prijava_Click(object sender, EventArgs e)
         {
             Korisnik korisnik = Korisnik.korisnici.FirstOrDefault(k => k.ID == txt_PrijavaId.Text);
-            if (korisnik != null && !korisnik.Prijavljen)
+            if(txt_PrijavaId.Text.Length != 6)
             {
-                MessageBox.Show("Uspjesna prijava");
-                korisnik.Prijava(txt_PrijavaId.Text);
-                txt_PrijavaId.Clear();
-            }
-            else if (korisnik != null && korisnik.Prijavljen)
-            {
-                korisnik.Odjava(txt_PrijavaId.Text);
-                MessageBox.Show("Uspjesna odjava");
-                txt_PrijavaId.Clear();
+                MessageBox.Show("Pogrešan unos!");
             }
             else
             {
-                MessageBox.Show("Ne postoji korisnik s tim ID-em");
+                if (korisnik != null && !korisnik.Prijavljen)
+                {
+                    MessageBox.Show("Uspjesna prijava");
+                    korisnik.Prijava(txt_PrijavaId.Text);
+                    txt_PrijavaId.Clear();
+                }
+                else if (korisnik != null && korisnik.Prijavljen)
+                {
+                    korisnik.Odjava(txt_PrijavaId.Text);
+                    MessageBox.Show("Uspjesna odjava");
+                    txt_PrijavaId.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Ne postoji korisnik s tim ID-em");
+                }
             }
         }
 

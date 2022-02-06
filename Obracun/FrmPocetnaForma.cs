@@ -41,7 +41,7 @@ namespace Obracun
 
         private void PopisZaposlenika()
         {
-            Korisnik.OsvjeziListu();
+            Korisnik.DohvatiKorisnike();
             dgv_popisZaposlenika.DataSource = Korisnik.korisnici;
         }
 

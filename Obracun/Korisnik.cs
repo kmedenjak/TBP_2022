@@ -11,7 +11,16 @@ namespace Obracun
     internal class Korisnik
     {
         static Baza baza = new Baza(new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=TBP2021"));
-        public static List<Korisnik> korisnici = DohvatiKorisnike();
+        public static List<Korisnik> korisnici = (from DataRow dr in baza.DohvatiRezultat("select * from korisnik").Rows
+                                                  select new Korisnik()
+                                                  {
+                                                      OIB = dr["oib"].ToString(),
+                                                      ID = dr["id_prijave"].ToString(),
+                                                      Ime = dr["ime"].ToString(),
+                                                      Prezime = dr["prezime"].ToString(),
+                                                      Prijavljen = Convert.ToBoolean(dr["prijavljen"]),
+                                                      Uloga = (int)dr["uloga_id"]
+                                                  }).ToList();
         public string OIB { get; set; }
         public string ID { get; set; }
         public string Ime { get; set; }
@@ -19,7 +28,7 @@ namespace Obracun
         public bool Prijavljen { get; set; }
         public int Uloga { get; set; }
 
-        Rad rad = new Rad();
+        public Rad rad = new Rad();
 
         public void Prijava(string id)
         {
@@ -54,9 +63,9 @@ namespace Obracun
             baza.Upis(brisanjeKorisnika);
         }
 
-        static List<Korisnik> DohvatiKorisnike()
+        public static List<Korisnik> DohvatiKorisnike()
         {
-            List<Korisnik> korisnici = (from DataRow dr in baza.DohvatiRezultat("select * from korisnik").Rows
+            korisnici = (from DataRow dr in baza.DohvatiRezultat("select * from korisnik").Rows
                                                       select new Korisnik()
                                                       {
                                                           OIB = dr["oib"].ToString(),
@@ -64,14 +73,9 @@ namespace Obracun
                                                           Ime = dr["ime"].ToString(),
                                                           Prezime = dr["prezime"].ToString(),
                                                           Prijavljen = Convert.ToBoolean(dr["prijavljen"]),
-                                                          Uloga = (int)dr["uloga_id"]
+                                                          Uloga = (int)dr["uloga_id"],
                                                       }).ToList();
             return korisnici;
-        }
-
-        public static void OsvjeziListu()
-        {
-            korisnici = DohvatiKorisnike();
         }
     }
 }

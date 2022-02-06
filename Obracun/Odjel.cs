@@ -11,14 +11,6 @@ namespace Obracun
     internal class Odjel
     {
         static Baza baza = new Baza(new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=TBP2021"));
-        /*public static List<Odjel> odjeli = (from DataRow dr in baza.DohvatiRezultat("select o.odjel_id, o.naziv_odjela, k.ime, k.prezime from korisnik k, odjel o where k.id_prijave = o.voditelj_odjela").Rows
-                                                       select new Odjel()
-                                                       {
-                                                           ID = dr["odjel_id"].ToString(),
-                                                           Naziv = dr["naziv_odjela"].ToString(),
-                                                           Prezime = dr["prezime"].ToString(),
-                                                           Ime = dr["ime"].ToString()
-                                                       }).ToList();*/
 
         public string ID { get; set; }
         public string Naziv { get; set; }

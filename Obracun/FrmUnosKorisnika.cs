@@ -30,8 +30,6 @@ namespace Obracun
         {
             int idRadnogMjesta = int.Parse(dgv_RadnoMjesto.CurrentRow.Cells[0].Value.ToString());
             baza.Upis($"INSERT INTO korisnik (oib, ime, prezime, telefon, email, id_prijave, uloga_id, radno_mjesto_id, nadredeni, prijavljen) VALUES ('{txt_Oib.Text}', '{txt_Ime.Text}', '{txt_Prezime.Text}', '{txt_Telefon.Text}', '{txt_Email.Text}', '{txt_ID.Text}', 3, {idRadnogMjesta}, null, false)");
-            MessageBox.Show("Uspjesno unesen korisnik!");
-            this.Close();
         }
     }
 }
